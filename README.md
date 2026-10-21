@@ -93,7 +93,7 @@ Step 4: Right click HR Folder → Security Tab → Click Advanced → Disabled I
 Step 5: Click Edit→ Add HR Group → Click Ok → Allow Full Control 
 <img width="779" height="695" alt="8 add full control to HR dept" src="https://github.com/user-attachments/assets/53d04669-f00b-47b1-a8c2-fb7bc686d854" />
 
-Step 6: Right click IT Folder → Security Tab → Click Advanced → Enabled Inheritance → click on convert inheritance Permissions → Remove all Users 
+Step 6: Right click IT Folder → Security Tab → Click Advanced → disabled Inheritance → click on convert inheritance Permissions → Remove all Users 
 
 Step 7: Click Edit→ Add IT Group → Click Ok → Allow Full Control 
 <img width="1120" height="809" alt="9 Add IT Department - Full control access" src="https://github.com/user-attachments/assets/937492a7-045c-4d68-9884-eee747d5a72f" />
