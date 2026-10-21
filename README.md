@@ -56,16 +56,25 @@ You’re simulating a file server for the HR and IT departments. You want users 
 Step 1: Open Active directory  
 
 Step 2: Under Users → Under HR→ create a new group → name it “HR_depart”.
+<img width="1040" height="759" alt="1 create new OU - New groups" src="https://github.com/user-attachments/assets/1115328c-833e-4723-9413-b2b4c403487c" />
 
 Step 3: Under Users → Under IT→ create a new group → name it “IT-depart”.
 
 Step 4: Under IT → create a new user → name it Lacus Clyne → Select password never expires → Click OK
+<img width="1219" height="813" alt="2 under IT department - Create new User" src="https://github.com/user-attachments/assets/d10cce9e-6812-4a01-85f2-77839aa7ad88" />
 
 Step 5: Add “Lacus Clyne” to IT Department → Right Click → Click Properties → Select Members Tab → Select Add → Click OK
+<img width="836" height="555" alt="3 Add new User to Members of IT Dept" src="https://github.com/user-attachments/assets/edbb314f-cf80-4db4-89e8-186527d6d8e3" />
 
 Step 6:  Under HR → create a new user → name it Conan Doyle → Select password never expires → Click OK
+<img width="1082" height="761" alt="4 Under Human Resources - Create new User" src="https://github.com/user-attachments/assets/e4f23689-a5d2-47f9-89dc-15d3b1df3830" />
 
 Step 7: Add “Conan Doyle” to HR Department → Right Click → Click Properties → Select Members Of Tab → Select Add → Click OK
+<img width="897" height="610" alt="5 Add new User to Members of HR dept" src="https://github.com/user-attachments/assets/6df387ea-a398-497c-b2a7-88ea9d70f4e8" />
+
+Troubleshooting: I had a problem accessing the shared File permissions in Conan Doyle User account. I found out that I put the Group accounts in "Members" instead of "Members of".
+
+
 
 ---
 
@@ -74,32 +83,44 @@ Step 7: Add “Conan Doyle” to HR Department → Right Click → Click Propert
 Step 1: Open File Explorer → Open Local (C:) Drive
 
 Step 2: Right click → Create a new folder → Name it “Department Shares”
+<img width="785" height="181" alt="6 create new folder - Department Shares" src="https://github.com/user-attachments/assets/8ef6df8f-fb37-42ca-81bc-d5d927892529" />
 
 Step 3: Create Two New folders Name them HR and IT.
 
-Step 4: Right click HR Folder → Security Tab → Click Advanced → Enabled Inheritance → click on convert inheritance Permissions → Remove all Users 
+Step 4: Right click HR Folder → Security Tab → Click Advanced → Disabled Inheritance → click on convert inheritance Permissions → Remove all Users 
+<img width="824" height="633" alt="7 Disable Inheritance" src="https://github.com/user-attachments/assets/00790775-115e-4564-af03-b1c02dd8d9e9" />
 
 Step 5: Click Edit→ Add HR Group → Click Ok → Allow Full Control 
+<img width="779" height="695" alt="8 add full control to HR dept" src="https://github.com/user-attachments/assets/53d04669-f00b-47b1-a8c2-fb7bc686d854" />
 
 Step 6: Right click IT Folder → Security Tab → Click Advanced → Enabled Inheritance → click on convert inheritance Permissions → Remove all Users 
 
 Step 7: Click Edit→ Add IT Group → Click Ok → Allow Full Control 
+<img width="1120" height="809" alt="9 Add IT Department - Full control access" src="https://github.com/user-attachments/assets/937492a7-045c-4d68-9884-eee747d5a72f" />
 
+
+---
 **Share The Parent Folder.**
 
 Step 8: Right click “Dept Shares” → Click Sharing Tab → Click Advance Sharing → Click Share this folder → Go to permissions → Remove Everyone → Add “HR-Dept” and “IT Dept” → Only Allow Read → Click OK
+<img width="1199" height="803" alt="10 Properties - sharing - advance sharing - permissions - add and remove groups - Apply and ok" src="https://github.com/user-attachments/assets/67f16a67-cceb-49a1-a22a-9c6406e6b02b" />
 
+---
 **Enable Access-Based Enumeration.**
 
 Step 9: Open File Server Manager 
+<img width="1536" height="923" alt="11 server manager - file and sharing - Department sharing - Properties" src="https://github.com/user-attachments/assets/cd84385f-461d-4334-b4c7-303089eadfbc" />
 
 Step 10: On the left side click File Storage Services → Click Shares → Right Click “Deptshares” → Select Properties → Select settings (left side) → Enable Access-Based Enumeration → Click OK and Apply
+<img width="670" height="588" alt="12 Enable Access-based Enumeration" src="https://github.com/user-attachments/assets/eb1347a3-8e4a-4b18-908b-02529d335004" />
 
+---
 **Testing The File Permissions.**
 
 Step 11: Verify it works → Go to Client Machine → Log into “Conan Doyle” and He should have access to HR folder and not see the IT folder.
 
 Step 12: Open File Explorer → Enter Windows Host Name → Should see shared folders in Network → Click Dept Share → Should only see HR
+<img width="599" height="143" alt="13 Successful Test Verification - Log Into User - Search Server name - Dept shares should pop up" src="https://github.com/user-attachments/assets/4b634535-4e48-4e78-8772-3b725bdade6f" />
 
 Step 13: Make sure it is not a member of Active Directory Domain Services Folder
 
